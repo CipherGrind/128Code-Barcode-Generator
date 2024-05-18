@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code128 Barcode Generator</title>
+    <link rel="stylesheet" type="text/css" href="barcode2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bwip-js/4.3.2/bwip-js-min.js" integrity="sha512-dV9dL8y1xRodF8L5GtSedYkY3Y2yq1HiazKwTnZXkFBqrr+UXx7d/5Qo8Py8kLbw8FxnoRqkBo486jB845IwHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div class="header">
+        <h3>BARCODE GENERATOR</h3>
+        <h5>CODE128</h5>
+    </div>
+    <div class="container">
+        <label for="password">Enter Data:</label>
+        <br><br>
+        <input type="text" id="password" placeholder="Enter Data">
+        <br><br>
+        <button onclick="generateBarcode()">Generate Barcode</button>
+        <button onclick="openSettings()">Settings</button>
+        <button onclick="clearBarcode()">Clear Barcode</button>
+        <button onclick="clearData()">Clear Data</button>
+        
+    </div>
+    <div class="container2">
+        <h3>BARCODE</h3>
+        <canvas id="barcode"></canvas>
+    </div>
+
+
+    <!-- Settings pop-out window -->
+    <div id="settingsPopup" class="popup">
+        <div class="closeMenu" id="closeMenuButton" onclick="closeSettings()" >
+            <span height="100%" width="100%"> CLOSE SETTINGS </span>
+        </div>
+        <div class="popup-content">
+            <label for="scaleSize">Select Scale Size: </label>
+            <br><br>
+            <div id="sizeButtons">
+                <button class="selected" onclick="selectSize(this, 1)">123 x 088</button>
+                <button class="" onclick="selectSize(this, 2)">246 x 174</button>
+                <button class="" onclick="selectSize(this, 3)">369 x 260</button>
+                <button class="" onclick="selectSize(this, 4)">492 x 348</button>
+                <button class="" onclick="selectSize(this, 5)">615 x 434</button>
+                <button class="" onclick="selectSize(this, 6)">738 x 520</button>
+                <button class="" onclick="selectSize(this, 7)">861 x 609</button>
+                <button class="" onclick="selectSize(this, 8)">984 x 694</button>
+                <button class="" onclick="selectSize(this, 9)">1107 x 780</button>
+            </div>
+            <br><br><br><br>
+
+        </div>
+        <div class="closeMenu" id="closeMenuButton" onclick="closeSettings()" >
+            <span height="100%" width="100%"> CLOSE SETTINGS </span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <h5>created by: Jonathan Levin</h5>
+    </div>
+
+
+    <script src="barcode2.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {
+    background-color: #84abd6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    text-align: center;
+    background-color: #0056b3;
+    color: white;
+    font-weight: bolder;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: rgb(255, 85, 0);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.container2 {
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    min-height: 200px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.selected {
+    background-color: #0056b3;
+    color: #fff;
+    margin-top: 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+input {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.barcode {
+    align-self: center;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+.popup {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(45, 45, 56);
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-right: solid 10px #84abd6;
+}
+
+.popup-content {
+    padding: 20px;
+    color: white;
+}
+
+
+.closeMenu {
+    text-align: center;
+    font-weight: bolder;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #0056b3;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 20px;
+}
+  
+.closeMenu:hover {
+    text-align: center;
+    font-weight: bolder;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgb(255, 85, 0);
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 20px;
+}
+
+
+
+
+
