@@ -1,6 +1,4 @@
-var barcodeScale = 1; // Default barcode size
-
-
+var barcodeScale = 1;
 
 function generateBarcode() {
     var password = document.getElementById('password').value.trim();
@@ -10,15 +8,15 @@ function generateBarcode() {
     }
 
     var canvas = document.getElementById('barcode');
-    canvas.innerHTML = ''; // Clear previous barcode if any
+    canvas.innerHTML = ''; 
 
     bwipjs.toCanvas(canvas, {
-        bcid: 'code128',       // Barcode type
-        text: password,        // Text to encode
-        scale: barcodeScale,   // Scaling factor
-        includetext: true,     // Show human-readable text
-        textxalign: 'center',  // Text horizontal alignment
-        textsize: 20           // Text size
+        bcid: 'code128',
+        text: password,
+        scale: barcodeScale,
+        includetext: true,
+        textxalign: 'center',
+        textsize: 20
     }, function (err) {
         if (err) {
             alert(err);
@@ -36,39 +34,50 @@ function clearBarcode() {
 }
 
 function clearData() {
-    document.getElementById('password').value = ''; // Clear password input field
+    document.getElementById('password').value = '';
 }
 
-
 ///////////////////////////////////////
 ///////////////////////////////////////
 
-// Function to open settings pop-out window
 function openSettings() {
     document.getElementById("settingsPopup").style.width = "330px";
 }
 
-// Function to close settings pop-out window
 function closeSettings() {
     document.getElementById("settingsPopup").style.width = "0px";
 }
 
-
-
 ////////////////////////
 ////////////////////////
 
-
-// Function to select barcode size
 function selectSize(button, scale) {
     barcodeScale = scale;
     
-    // Remove 'selected' class from all buttons
     var sizeButtons = document.querySelectorAll("#sizeButtons button");
     sizeButtons.forEach(function(btn) {
         btn.classList.remove("selected");
     });
     
-    // Add 'selected' class to the clicked button
     button.classList.add("selected");
+}
+
+////////////////////////
+////////////////////////
+
+function downloadBarcode() {
+    const barcode128 = document.getElementById('barcode');
+
+    html2canvas(barcode128, {
+        useCORS: true,
+        backgroundColor: null
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'barcode.png';
+        link.click();
+    }).catch(err => {
+        console.error('Error generating image:', err);
+        alert('An error occurred while generating the badge image.');
+    });
 }
